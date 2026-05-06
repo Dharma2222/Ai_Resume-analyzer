@@ -1,16 +1,3 @@
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/soumya997/resume-analyzer/main/Resume_analyzer_app.py)
-
-<p align="center">
-<img src="https://i.imgur.com/BcPSOvq.png" width="400">
-<br/>
-<a href=""><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=for-the-badge&labelColor=black&logo=github"></a>
-<br/>
-<img alt="GitHub" src="https://img.shields.io/github/license/soumya997/Resume-analyzer?style=for-the-badge">
-<p align="center">
-
- <img src="https://forthebadge.com/images/badges/built-with-love.svg"> <img src="https://forthebadge.com/images/badges/made-with-python.svg"> <img src="https://forthebadge.com/images/badges/open-source.svg"> <img src="https://forthebadge.com/images/badges/made-with-reason.svg">
-
-</p>
 
 <i>Resume Analyzer is a tool for recruiters which can help them to select candidates based on their resume and it also helps by providing a overall summary of the resume using which recruiters can know that individual in a more better way in less time.</i>
 
@@ -27,34 +14,25 @@ The whole application is having two tools right now,
 
 
 
-# User Interface📱:
-<pre>
-<img src="https://i.imgur.com/V9hXoqu.png" width="900"> <img src="https://i.imgur.com/buS9WTx.png" width="900"> <img src="https://i.imgur.com/a5hXSTc.png" width="900"> <img src="https://i.ibb.co/WWxq1mv/Screenshot-798.png" width="900">
-
-</pre>
-
-
-
 
 # Project workflow🧾: 
 
 
 ### Data Preparation:
 1. I scraped app the sample resumes from overlife.com using the `pdf scraper.py` file.And parsed all the text from each resume. The resumes from this source is mostly for Engineering and programming field.And data quality is not so good.
-2. I took some data from [here](https://github.com/laxmimerit/Resume-and-CV-Summarization-and-Parsing-with-Spacy-in-Python) also. Most of the resume of this source is for software development and data analyst role.
-3. There was almost 300+ resumes(122 by scrapping and ~200 from the above repo), I did not get chance to label all the data to I randomly assigned some score from 1 to 10. 
+2. Most of the resume of this source is for software development and data analyst role.
+3. There was almost 300+ resumes(122 by scrapping and 200 from the above repo), I did not get chance to label all the data to I randomly assigned some score from 1 to 10. 
 4. Created a csv file combining all the data source.
 5. Data from above repo is already tagged for NER so i did not do that.
 
 ### Model Building:
 1. For classificating I tried RNNs but as the dataset size was too less deep learning was working poor. I tried different ML models like `random forest` ,`naive bayes classifier`, `random forest with RandomizedSearchCV`. As we were having `accurecy_score` as the evaluation method so i went with random forest as it was giving more accuracy.(The dataset is not so balanced and upsampling, weighted baised approach can be applied and some different method of evaluation could be applied like `recall` or `f1` but because of some time constraints I was unable to do that). Notebook is provided under `Notebooks` folder,file name is `classification model training notebook.ipynb`.
 
-2. For Custom NER I used Spacy to do that. As per the Spacy docs they used Convolutional layers with residual connections, layer normalization and maxout non-linearity are used,which giving much better efficiency than the standard BiLSTM solution.[Source](https://spacy.io/models)
+2. For Custom NER I used Spacy to do that. As per the Spacy docs they used Convolutional layers with residual connections, layer normalization and maxout non-linearity are used,which giving much better efficiency than the standard BiLSTM solution.
 
 ### Model Deployment:
 1. For that I went with `flask` 1st, but as the UI was not good so, finally i switched to `streamlit`. The python file for flask and streamlit are present in the repo.
-2. As it was a streamlit app, and as I just got the approval to use their deployment plateform from the `streamlit` team itself. So, I decided to use that. You can see the deployed app [here](https://share.streamlit.io/soumya997/resume-analyzer/main/Resume_analyzer_app.py).
-
+2. As it was a streamlit app, and as I just got the approval to use their deployment plateform from the `streamlit` team itself. So, I decided to use that.
 <!-- 2. I have also Containerized the whole app using `Docker`. So you can that also to get the app locally. -->
 
 ### Documentation:
@@ -89,7 +67,7 @@ Name: score, dtype: int64
 4. Containerizing the project.
 <BR>
 
-**NOTE:** <i>If you can implement any of the above mentioned feature, please feel free to make a PR. Except, that if you have any problem understanding the above mentioned features feel free to creat an issue.</i>
+
 
 # File Structure📂:
 |File/Folder Name| Usage of that file/folder|
@@ -127,18 +105,6 @@ Name: score, dtype: int64
 1.3 `pip install -r requirements.txt `
 
 1.4 `streamlit run <file_name>`
-
-# Connect with me If you need any help🤝:
-
-<br>
-
-<a href="https://twitter.com/Soumya997Sarkar"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/Soumya997Sarkar?style=for-the-badge&color=09f&labelColor=black&logo=twitter&label=@Soumya997Sarkar"></a>
-<a href="https://www.linkedin.com/in/soumyadip-sarkar-173901183/" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="xtenzq" width="22px" />
-<img alt="GitHub followers" src="https://img.shields.io/github/followers/soumya997?color=green&logo=github&style=for-the-badge">
-[![Gmail](https://img.shields.io/badge/-soumyadip-c14438?style=for-the-badge&logo=Gmail&logoColor=white)](mailto:soumya997.sarkar@gmail.com)
-
-
-<br>
 
 
 
